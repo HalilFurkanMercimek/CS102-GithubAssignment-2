@@ -18,7 +18,7 @@ public class main {
         }
         System.out.println("max number is " + max);
     }
-     public void findMin(int[] arr){
+    public void findMin(int[] arr){
         int min = Integer.MAX_VALUE;
         
         for(int i = 0; i < arr.length; i++ ){
