@@ -8,18 +8,20 @@ public class main {
 
     }
     public void printMenu(){
-            
-    }
-    public void findMax(int[] arr){
 
     }
-     public void findMin(int[] arr){
+    public int[] findMax(int[] arr){
+        int max = Integer.MIN_VALUE;
+        
+        for()
+    }
+     public int[] findMin(int[] arr){
 
     }
-    public void partD(){
+    public int[] partD(){
 
     }
-    public void partE(){
+    public int[] partE(){
         
     }
 }
