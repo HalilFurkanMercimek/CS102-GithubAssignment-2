@@ -5,10 +5,12 @@ import java.util.Scanner;
 public class main {
 
     public static void main(String[] args) {
+
+        printMenu();
         
     }
 
-    public int[] createArray(int size){
+    public static int[] createArray(int size){
         Random rand = new Random();
         int[] arr = new int[size];
         for (int i = 0; i<arr.length; i++){
@@ -16,35 +18,41 @@ public class main {
         }
         return arr;
     }
-    public void printMenu(){
+    public static void printMenu(){
         Scanner input = new Scanner(System.in);
         boolean isExit = false;
+        System.out.print("Type size of the array:");
+        int size = input.nextInt();
+        int [] array = createArray(size);
 
-        while (isExit) {
-            System.out.println("Type size of the array:");
-            int size = input.nextInt();
-            System.out.println("1- Find Max Value\n2- Find Min Value\n3- Find Difference\n4- Find Sum");
+        while (!isExit) {
+            
+            System.out.println("1- Find Max Value\n2- Find Min Value\n3- Find Difference\n4- Find Sum\n5- Exit!");
             System.out.print("Choose what you want: ");
-            int choise = input.nextInt();
+            int choice = input.nextInt();
 
-            int [] array = createArray(size);
+            
 
-            if (choise == 1) {
+            if (choice == 1) {
                 findMax(array);
             }
-            else if (choise == 2) {
+            else if (choice == 2) {
                 findMin(array);
             }
-            else if (choise == 3) {
+            else if (choice == 3) {
                 differenceBetweenAverage(array);
             }
-            else if (choise == 4) {
+            else if (choice == 4) {
                 findSumOfElements(array);
+            }
+            else if (choice == 5) {
+                isExit = true;
+                System.out.println("Logged out!");
             }
         }
 
     }
-    public void findMax(int[] arr){
+    public static void findMax(int[] arr){
         int max = Integer.MIN_VALUE;
         
         for(int i = 0; i < arr.length; i++ ){
@@ -52,18 +60,18 @@ public class main {
         }
         System.out.println("max number is " + max);
     }
-    public void findMin(int[] arr){
+    public static void findMin(int[] arr){
         int min = Integer.MAX_VALUE;
         
         for(int i = 0; i < arr.length; i++ ){
-            if( arr[i] > min) min = arr[i];
+            if( arr[i] < min) min = arr[i];
         }
         System.out.println("min number is " + min);
 
     }
-    public void differenceBetweenAverage(int[] arr){
-        int sum = 0;
-        int ave = 0;
+    public static void differenceBetweenAverage(int[] arr){
+        double sum = 0;
+        double ave = 0;
         String arrayString = "";
         for(int i = 0; i < arr.length; i++){
             sum += arr[i]; 
@@ -71,7 +79,7 @@ public class main {
 
         ave = sum/arr.length; 
 
-        int[] differenceArray = new int[arr.length];
+        double[] differenceArray = new double[arr.length];
 
         for(int j = 0; j < arr.length; j++){
             differenceArray[j] = ave - arr[j];
@@ -91,7 +99,7 @@ public class main {
         System.out.println(arrayString);
         
     }
-    public void findSumOfElements(int[] arr){
+    public static void findSumOfElements(int[] arr){
         int length = arr.length;
         int sumOfOdd = 0, sumOfEven = 0;
         
