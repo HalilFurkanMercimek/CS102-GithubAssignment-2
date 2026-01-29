@@ -1,5 +1,7 @@
 import java.util.Random;
 
+import java.util.Scanner;
+
 public class main {
 
     public static void main(String[] args) {
@@ -15,6 +17,31 @@ public class main {
         return arr;
     }
     public void printMenu(){
+        Scanner input = new Scanner(System.in);
+        boolean isExit = false;
+
+        while (isExit) {
+            System.out.println("Type size of the array:");
+            int size = input.nextInt();
+            System.out.println("1- Find Max Value\n2- Find Min Value\n3- Find Difference\n4- Find Sum");
+            System.out.print("Choose what you want: ");
+            int choise = input.nextInt();
+
+            int [] array = createArray(size);
+
+            if (choise == 1) {
+                findMax(array);
+            }
+            else if (choise == 2) {
+                findMin(array);
+            }
+            else if (choise == 3) {
+                differenceBetweenAverage(array);
+            }
+            else if (choise == 4) {
+                findSumOfElements(array);
+            }
+        }
 
     }
     public void findMax(int[] arr){
