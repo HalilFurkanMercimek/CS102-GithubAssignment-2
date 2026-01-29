@@ -10,18 +10,27 @@ public class main {
     public void printMenu(){
 
     }
-    public int[] findMax(int[] arr){
+    public void findMax(int[] arr){
         int max = Integer.MIN_VALUE;
         
-        for()
+        for(int i = 0; i < arr.length; i++ ){
+            if( arr[i] > max) max = arr[i];
+        }
+        System.out.println("max number is " + max);
     }
-     public int[] findMin(int[] arr){
+     public void findMin(int[] arr){
+        int min = Integer.MAX_VALUE;
+        
+        for(int i = 0; i < arr.length; i++ ){
+            if( arr[i] > min) min = arr[i];
+        }
+        System.out.println("min number is " + min);
 
     }
-    public int[] partD(){
+    public void partD(){
 
     }
-    public int[] partE(){
+    public void partE(){
         
     }
 }
