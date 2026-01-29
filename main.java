@@ -16,8 +16,35 @@ public class main {
      public void findMin(int[] arr){
 
     }
-    public void partD(){
+    public void differenceBetweenAverage(int[] arr){
+        int sum = 0;
+        int ave = 0;
+        String arrayString = "";
+        for(int i = 0; i < arr.length; i++){
+            sum += arr[i]; 
+        }
 
+        ave = sum/arr.length; 
+
+        int[] differenceArray = new int[arr.length];
+
+        for(int j = 0; j < arr.length; j++){
+            differenceArray[j] = ave - arr[j];
+        }
+
+        arrayString += "(";
+        for (int k = 0; k < arr.length; k++){
+
+            arrayString += differenceArray[k];
+            if (k != arr.length-1) {
+                arrayString += ",";
+            }
+
+        }
+        arrayString += ")";
+
+        System.out.println(arrayString);
+        
     }
     public void partE(){
         
