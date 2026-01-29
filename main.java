@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class main {
 
     public static void main(String[] args) {
@@ -5,7 +7,12 @@ public class main {
     }
 
     public int[] createArray(int size){
-
+        Random rand = new Random();
+        int[] arr = new int[size];
+        for (int i = 0; i<arr.length; i++){
+            arr[i] = rand.nextInt(0,101);
+        }
+        return arr;
     }
     public void printMenu(){
 
